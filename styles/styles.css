@@ -46,7 +46,7 @@ body {
 }
 
 .header {
-  background-color: #f8f9fa;
+  background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
 }
@@ -58,7 +58,7 @@ body {
   background-color: #f1f1f1;
   padding: 10px;
   text-align: center;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
 }
 
 .body {
