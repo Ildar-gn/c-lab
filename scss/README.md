@@ -1,3 +1,4 @@
-## Команда
+## Команды
 
-- `sass scss/styles.scss styles.css` - Компиляция SCSS файлов в CSS
+- `gulp` - запускает gulp
+- `gulp build` - собрать минифицированные CSS и HTML файлы после завершения проекта
