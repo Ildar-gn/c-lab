@@ -6,6 +6,7 @@ const htmlmin = require('gulp-htmlmin');
 const nunjucksRender = require('gulp-nunjucks-render');
 const data = require('gulp-data');
 const watch = require('gulp-watch');
+const ghPages = require('gulp-gh-pages');
 const path = require('path');
 
 // Компиляция SCSS в CSS
@@ -75,3 +76,9 @@ gulp.task('default', gulp.series('sass', 'nunjucks', 'images', 'fonts', 'scripts
 
 // Задача для сборки проекта
 gulp.task('build', gulp.series('sass', 'minify-css', 'nunjucks', 'minify-html', 'images', 'fonts', 'scripts'));
+
+// Задача для деплоя на gh-pages
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
