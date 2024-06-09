@@ -34,7 +34,7 @@ gulp.task('minify-html', function() {
 
 // Обработка шаблонов Nunjucks
 gulp.task('nunjucks', function() {
-  return gulp.src('src/pages/**/*.njk')
+  return gulp.src(['src/templates/**/*.html', '!src/templates/layout.html', '!src/templates/header.html', '!src/templates/footer.html']) // Исключаем layout.html, header.html и footer.html
     .pipe(data(function(file) {
       return require('./src/data.json');
     }))
@@ -65,7 +65,7 @@ gulp.task('scripts', function() {
 // Наблюдение за изменениями в SCSS и Nunjucks файлах
 gulp.task('watch', function() {
   gulp.watch('scss/**/*.scss', gulp.series('sass'));
-  gulp.watch('src/**/*.njk', gulp.series('nunjucks'));
+  gulp.watch('src/**/*.html', gulp.series('nunjucks')); // Изменено на .html
   gulp.watch('src/images/**/*', gulp.series('images'));
   gulp.watch('src/fonts/**/*', gulp.series('fonts'));
   gulp.watch('src/scripts/**/*', gulp.series('scripts'));
